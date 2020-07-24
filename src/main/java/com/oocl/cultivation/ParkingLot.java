@@ -7,11 +7,19 @@ import java.util.Map;
 
 public class ParkingLot {
     private Map<CarTicket, Car> carRooms = new HashMap();
+    private int postionNum;
+
+    public ParkingLot() {
+        this.postionNum = 10;
+    }
 
     public CarTicket park(Car car) {
-        CarTicket carTicket = new CarTicket();
-        carRooms.put(carTicket,car);
-        return carTicket;
+        if(carRooms.size() != this.postionNum){
+            CarTicket carTicket = new CarTicket();
+            carRooms.put(carTicket,car);
+            return carTicket;
+        }
+        return null;
     }
 
     public Car fetch(CarTicket ticket) {
