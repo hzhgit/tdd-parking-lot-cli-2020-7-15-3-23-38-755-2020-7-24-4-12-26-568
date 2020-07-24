@@ -32,7 +32,7 @@ public class ParkingLotTest {
         ParkingLot parkingLot = new ParkingLot();
 
         //when
-        Car car = parkingLot.fetch();
+        Car car = parkingLot.fetch(carTicket);
 
         //then
         assertNotNull(car);
@@ -49,5 +49,20 @@ public class ParkingLotTest {
 
         //then
         assertEquals(cars.size(),tickets.size());
+    }
+
+    @Test
+    void should_return_right_car_when_fetch_car_given_ticket(){
+        //given
+        Car car = new Car();
+        CarTicket ticket = new CarTicket();
+        ParkingLot parkingLot = new ParkingLot();
+
+        //when
+
+        Car rightCar = parkingLot.fetch(ticket);
+
+        //then
+        assertEquals(car,rightCar);
     }
 }
