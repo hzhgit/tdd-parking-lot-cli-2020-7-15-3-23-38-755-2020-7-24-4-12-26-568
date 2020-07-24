@@ -15,7 +15,9 @@ public class ParkingLot {
     }
 
     public Car fetch(CarTicket ticket) {
-        return carRooms.get(ticket);
+        Car fetchedCar = carRooms.get(ticket);
+        carRooms.remove(ticket);
+        return fetchedCar;
     }
 
     public List<CarTicket> parkMutipleCar(List<Car> cars) {
