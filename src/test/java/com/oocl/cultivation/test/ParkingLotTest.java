@@ -47,11 +47,11 @@ public class ParkingLotTest {
         List<CarTicket> tickets = parkingLot.parkMutipleCar(cars);
 
         //then
-        assertEquals(cars.size(),tickets.size());
+        assertEquals(cars.size(), tickets.size());
     }
 
     @Test
-    void should_return_right_car_when_fetch_car_given_ticket(){
+    void should_return_right_car_when_fetch_car_given_ticket() {
         //given
         Car car1 = new Car();
         Car car2 = new Car();
@@ -64,8 +64,21 @@ public class ParkingLotTest {
         Car fetchedCar2 = parkingLot.fetch(carTicket2);
 
         //then
-        assertEquals(car1,fetchedCar1);
-        assertEquals(car2,fetchedCar2);
-        assertNotEquals(car1,car2);
+        assertEquals(car1, fetchedCar1);
+        assertEquals(car2, fetchedCar2);
+        assertNotEquals(car1, car2);
+    }
+
+    @Test
+    void should_return_null_when_customer_given_wrong_ticket() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        CarTicket ticket = new CarTicket();
+
+        //when
+        Car car = parkingLot.fetch(ticket);
+
+        //them
+        assertNull(car);
     }
 }
