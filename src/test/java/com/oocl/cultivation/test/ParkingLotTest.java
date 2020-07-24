@@ -19,7 +19,7 @@ public class ParkingLotTest {
         ParkingLot parkingLot = new ParkingLot();
 
         //when
-        CarTicket carTicket = parkingLot.park();
+        CarTicket carTicket = parkingLot.park(car);
 
         //then
         assertNotNull(carTicket);
@@ -45,7 +45,7 @@ public class ParkingLotTest {
         ParkingLot parkingLot = new ParkingLot();
 
         //when
-        List<CarTicket> tickets = parkingLot.parkMutipleCar();
+        List<CarTicket> tickets = parkingLot.parkMutipleCar(cars);
 
         //then
         assertEquals(cars.size(),tickets.size());
