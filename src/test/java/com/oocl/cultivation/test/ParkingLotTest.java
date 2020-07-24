@@ -28,8 +28,8 @@ public class ParkingLotTest {
     @Test
     void should_return_car_when_fetch_car_given_ticket() {
         //given
-        CarTicket carTicket = new CarTicket();
         ParkingLot parkingLot = new ParkingLot();
+        CarTicket carTicket = parkingLot.park(new Car());
 
         //when
         Car car = parkingLot.fetch(carTicket);

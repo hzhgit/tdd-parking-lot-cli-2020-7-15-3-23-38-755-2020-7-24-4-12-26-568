@@ -9,11 +9,13 @@ public class ParkingLot {
     private Map<CarTicket, Car> carRooms = new HashMap();
 
     public CarTicket park(Car car) {
-        return new CarTicket();
+        CarTicket carTicket = new CarTicket();
+        carRooms.put(carTicket,car);
+        return carTicket;
     }
 
     public Car fetch(CarTicket ticket) {
-        return new Car();
+        return carRooms.get(ticket);
     }
 
     public List<CarTicket> parkMutipleCar(List<Car> cars) {
