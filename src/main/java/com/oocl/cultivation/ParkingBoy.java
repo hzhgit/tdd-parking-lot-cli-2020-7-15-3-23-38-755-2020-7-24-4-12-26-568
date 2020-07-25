@@ -22,6 +22,11 @@ public class ParkingBoy {
     }
 
     public CarTicket park(Car car) {
+        for (ParkingLot parkingLot : this.parkingLots) {
+            if (parkingLot.getEmptyPostion() > 0) {
+                return parkingLot.park(car);
+            }
+        }
         return null;
     }
 

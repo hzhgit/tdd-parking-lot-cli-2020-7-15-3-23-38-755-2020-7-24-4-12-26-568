@@ -37,6 +37,6 @@ public class ParkingLot {
     }
 
     public int getEmptyPostion() {
-        return 0;
+        return this.postionNum - this.carRooms.size();
     }
 }
