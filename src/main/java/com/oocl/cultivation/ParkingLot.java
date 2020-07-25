@@ -36,4 +36,7 @@ public class ParkingLot {
         return tickets;
     }
 
+    public int getEmptyPostion() {
+        return 0;
+    }
 }
