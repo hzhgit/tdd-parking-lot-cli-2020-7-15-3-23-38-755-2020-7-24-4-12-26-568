@@ -140,5 +140,18 @@ public class ParkingLotTest {
         assertEquals("Unrecognized parking ticket",wrongMesasage);
     }
 
+    @Test
+    void should_return_please_provide_your_parking_ticket_when_customer_fetch_car_given_none() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        Car car = new Car();
+
+        //when
+        String wrongMesasage = parkingLot.say(null);
+
+        //then
+        assertEquals("Please provide your parking ticket",wrongMesasage);
+    }
+
 
 }
