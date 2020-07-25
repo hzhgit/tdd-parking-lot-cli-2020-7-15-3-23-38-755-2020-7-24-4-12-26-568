@@ -96,6 +96,6 @@ public class ParkingBoyTest {
         List<ParkingLot> actual = parkingBoy.getParkingLots();
 
         //then
-        assertEquals(10,actual.get(0).getEmptyPostion());
+        assertEquals(0,actual.get(0).getEmptyPostion());
     }
 }
