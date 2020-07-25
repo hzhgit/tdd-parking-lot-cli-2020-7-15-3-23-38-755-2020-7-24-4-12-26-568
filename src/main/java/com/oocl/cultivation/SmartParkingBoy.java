@@ -1,8 +1,7 @@
 package com.oocl.cultivation;
 
-import sun.security.krb5.internal.Ticket;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class SmartParkingBoy extends ParkingBoy{
 
@@ -10,7 +9,19 @@ public class SmartParkingBoy extends ParkingBoy{
         super(parkingLots);
     }
 
-    public Ticket park() {
-        return null;
+    @Override
+    public CarTicket park(Car car) {
+        List<ParkingLot> parkingLots= super.getParkingLots();
+        int parkingLotNumber = parkingLots.size();
+        int maxNumber = 0;
+        int selectPotIndex = 0;
+        for (int i = 0; i < parkingLotNumber; i++) {
+            if(parkingLots.get(i).getEmptyPostion() > maxNumber){
+                maxNumber = parkingLots.get(i).getEmptyPostion();
+                selectPotIndex = i;
+            }
+        }
+
+        return parkingLots.get(selectPotIndex).park(car);
     }
 }
