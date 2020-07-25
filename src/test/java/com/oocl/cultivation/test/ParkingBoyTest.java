@@ -52,4 +52,24 @@ public class ParkingBoyTest {
         //then
         assertEquals("Please provide your parking ticket.", message);
     }
+
+    @Test
+    void should_return_not_enough_position_when_parking_boy_parking_given_parking_lot_no_postion(){
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        for (int i = 0; i < 10; i++) {
+            parkingLot.park(new Car());
+        }
+        Car car11 = new Car();
+
+        //when
+        String message = "";
+        if(parkingLot.park(car11) == null){
+            message = "Not enough position";
+        }
+
+        //then
+        assertEquals("Not enough position",message);
+    }
 }
