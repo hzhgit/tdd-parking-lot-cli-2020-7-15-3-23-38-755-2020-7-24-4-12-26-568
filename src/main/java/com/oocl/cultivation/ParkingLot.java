@@ -36,9 +36,4 @@ public class ParkingLot {
         return tickets;
     }
 
-    public String say(CarTicket wrongTicket) {
-        if(wrongTicket == null)
-            return "Please provide your parking ticket";
-        return "Unrecognized parking ticket";
-    }
 }
