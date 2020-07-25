@@ -124,4 +124,21 @@ public class ParkingLotTest {
         //then
         assertNull(ticket);
     }
+
+    @Test
+    void should_return_unrecognized_parking_ticket_when_customer_fetch_car_given_wrong_ticket(){
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        Car car = new Car();
+        CarTicket wrongTicket = new CarTicket();
+        CarTicket rightTicket = parkingLot.park(car);
+
+        //when
+        String wrongMesasage = parkingLot.say(wrongTicket);
+
+        //then
+        assertEquals("Unrecognized parking ticket",wrongMesasage);
+    }
+
+
 }
