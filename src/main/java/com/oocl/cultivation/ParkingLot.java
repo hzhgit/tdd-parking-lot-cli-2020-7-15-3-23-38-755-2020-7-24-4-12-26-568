@@ -13,6 +13,10 @@ public class ParkingLot {
         this.postionNum = 10;
     }
 
+    public ParkingLot(int postionNum) {
+        this.postionNum = postionNum;
+    }
+
     public CarTicket park(Car car) {
         if(carRooms.size() != this.postionNum){
             CarTicket carTicket = new CarTicket();
