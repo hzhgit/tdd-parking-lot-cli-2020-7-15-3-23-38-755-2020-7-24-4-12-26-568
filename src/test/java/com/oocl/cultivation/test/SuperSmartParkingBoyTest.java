@@ -23,9 +23,10 @@ public class SuperSmartParkingBoyTest {
         parkingLots.add(pot3);
         SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy((ArrayList<ParkingLot>) parkingLots);
 
-        //pot1 has 1 car
-        Car car = new Car();
-        pot1.park(car);
+        //pot1 has 3 car
+        for (int i = 0; i < 3; i++) {
+            pot1.park(new Car());
+        }
         //pot2 has 4 car
         for (int i = 0; i < 4; i++) {
             pot2.park(new Car());
@@ -36,7 +37,7 @@ public class SuperSmartParkingBoyTest {
         }
 
         Car newCar = new Car();
-        superSmartParkingBoy.park(car);
+        superSmartParkingBoy.park(newCar);
 
         //when
         int actual1 = pot1.getEmptyPostion();
@@ -44,7 +45,7 @@ public class SuperSmartParkingBoyTest {
         int actual3 = pot3.getEmptyPostion();
 
         //then
-        assertEquals(4,actual1);
+        assertEquals(2,actual1);
         assertEquals(5,actual2);
         assertEquals(10,actual3);
     }
