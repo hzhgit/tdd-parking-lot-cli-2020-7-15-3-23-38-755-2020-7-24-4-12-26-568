@@ -22,7 +22,7 @@ public class ParkingBoy {
     }
 
     public String say(Car car) {
-        return null;
+        return "Not enough position";
     }
 
     public CarTicket park(Car car) {
