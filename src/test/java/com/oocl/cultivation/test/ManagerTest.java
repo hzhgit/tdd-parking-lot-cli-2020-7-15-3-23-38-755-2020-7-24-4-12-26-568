@@ -19,9 +19,9 @@ public class ManagerTest {
 
         Manager manager = new Manager(parkables);
         //when
-        CarTicket ticket1 = manager.askParkingBoyToPark(parkables.get(0),new Car());
-        CarTicket ticket2 = manager.askParkingBoyToPark(parkables.get(1),new Car());
-        CarTicket ticket3 = manager.askParkingBoyToPark(parkables.get(2),new Car());
+        CarTicket ticket1 = manager.park(parkables.get(0),new Car());
+        CarTicket ticket2 = manager.park(parkables.get(1),new Car());
+        CarTicket ticket3 = manager.park(parkables.get(2),new Car());
         //then
         assertNotNull(ticket1);
         assertNotNull(ticket2);
