@@ -67,10 +67,7 @@ public class ParkingBoyTest {
         Car car11 = new Car();
 
         //when
-        String message = "";
-        if(parkingLot.park(car11) == null){
-            message = "Not enough position";
-        }
+        String message = parkingBoy.say(car11);
 
         //then
         assertEquals("Not enough position",message);

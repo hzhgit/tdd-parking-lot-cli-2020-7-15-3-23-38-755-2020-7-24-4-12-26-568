@@ -21,6 +21,10 @@ public class ParkingBoy {
         return "Unrecognized parking ticket.";
     }
 
+    public String say(Car car) {
+        return null;
+    }
+
     public CarTicket park(Car car) {
         for (ParkingLot parkingLot : this.parkingLots) {
             if (parkingLot.getEmptyPostion() > 0) {
