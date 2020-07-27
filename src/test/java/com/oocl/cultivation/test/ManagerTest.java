@@ -10,14 +10,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ManagerTest {
     @Test
-    public void should_return_ticket_when_park_given_car() {
+    void should_return_ticket_when_park_given_car() {
         //given
         List<Parkable> parkables = new ArrayList<>();
         parkables.add((Parkable) new ParkingBoy(new ParkingLot()));
+        parkables.add((Parkable) new SmartParkingBoy(new ParkingLot()));
+        parkables.add((Parkable) new SuperSmartParkingBoy(new ParkingLot()));
+
         Manager manager = new Manager(parkables);
         Car car = new Car();
         //when
-        CarTicket ticket = Manager.park(car);
+        CarTicket ticket = manager.park(car);
         //then
         assertNotNull(ticket);
     }

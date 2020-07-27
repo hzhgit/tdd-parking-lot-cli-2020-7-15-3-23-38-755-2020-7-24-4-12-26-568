@@ -5,7 +5,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SuperSmartParkingBoy extends SmartParkingBoy {
+public class SuperSmartParkingBoy extends SmartParkingBoy implements Parkable{
+
+    public SuperSmartParkingBoy(ParkingLot parkingLot) {
+        super(parkingLot);
+    }
 
     public SuperSmartParkingBoy(ArrayList<ParkingLot> parkingLots) {
         super(parkingLots);

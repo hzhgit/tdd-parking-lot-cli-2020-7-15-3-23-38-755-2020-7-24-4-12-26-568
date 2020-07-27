@@ -9,7 +9,7 @@ public class Manager {
         this.parkables = parkables;
     }
 
-    public static CarTicket park(Car car) {
+    public CarTicket park(Car car) {
         return null;
     }
 }

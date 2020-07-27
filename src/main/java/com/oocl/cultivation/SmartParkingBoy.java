@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SmartParkingBoy extends ParkingBoy {
+public class SmartParkingBoy extends ParkingBoy implements Parkable{
 
     public SmartParkingBoy(ArrayList<ParkingLot> parkingLots) {
         super(parkingLots);
+    }
+
+    public SmartParkingBoy(ParkingLot parkingLot) {
+        super(parkingLot);
     }
 
     @Override
