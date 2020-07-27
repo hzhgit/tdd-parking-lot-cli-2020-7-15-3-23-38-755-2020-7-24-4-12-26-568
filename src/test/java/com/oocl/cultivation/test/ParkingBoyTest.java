@@ -20,7 +20,7 @@ public class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        String message = parkingBoy.say(ticket);
+        String message = parkingBoy.getErrorMessage(ticket);
         //then
         assertEquals("Unrecognized parking ticket.", message);
     }
@@ -38,7 +38,7 @@ public class ParkingBoyTest {
         String message = "";
         Car fetchAgainCar = parkingLot.fetch(ticket);
         if(fetchAgainCar == null)
-            message = parkingBoy.say(ticket);
+            message = parkingBoy.getErrorMessage(ticket);
         //then
         assertEquals("Unrecognized parking ticket.", message);
     }
@@ -50,7 +50,7 @@ public class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        String message = parkingBoy.say((CarTicket) (null));
+        String message = parkingBoy.getErrorMessage((CarTicket) (null));
 
         //then
         assertEquals("Please provide your parking ticket.", message);
@@ -67,7 +67,7 @@ public class ParkingBoyTest {
         Car car11 = new Car();
 
         //when
-        String message = parkingBoy.say(car11);
+        String message = parkingBoy.getErrorMessage(car11);
 
         //then
         assertEquals("Not enough position",message);

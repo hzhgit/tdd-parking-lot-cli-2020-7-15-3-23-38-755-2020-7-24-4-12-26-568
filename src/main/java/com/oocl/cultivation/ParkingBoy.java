@@ -15,13 +15,13 @@ public class ParkingBoy {
         this.parkingLots = parkingLots;
     }
 
-    public String say(CarTicket wrongTicket) {
+    public String getErrorMessage(CarTicket wrongTicket) {
         if (wrongTicket == null)
             return "Please provide your parking ticket.";
         return "Unrecognized parking ticket.";
     }
 
-    public String say(Car car) {
+    public String getErrorMessage(Car car) {
         return "Not enough position";
     }
 
