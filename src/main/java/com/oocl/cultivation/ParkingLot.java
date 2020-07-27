@@ -47,4 +47,8 @@ public class ParkingLot {
     public double getUtilization() {
         return (double)this.carRooms.size() / this.postionNum;
     }
+
+    public boolean isParkingLotFull() {
+        return this.carRooms.size() == this.postionNum;
+    }
 }
