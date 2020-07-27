@@ -18,10 +18,13 @@ public class ManagerTest {
         parkables.add((Parkable) new SuperSmartParkingBoy(new ParkingLot()));
 
         Manager manager = new Manager(parkables);
-        Car car = new Car();
         //when
-        CarTicket ticket = manager.park(car);
+        CarTicket ticket1 = manager.askParkingBoyToPark(parkables.get(0),new Car());
+        CarTicket ticket2 = manager.askParkingBoyToPark(parkables.get(1),new Car());
+        CarTicket ticket3 = manager.askParkingBoyToPark(parkables.get(2),new Car());
         //then
-        assertNotNull(ticket);
+        assertNotNull(ticket1);
+        assertNotNull(ticket2);
+        assertNotNull(ticket3);
     }
 }
